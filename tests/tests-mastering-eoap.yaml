@@ -41,4 +41,28 @@
   output:
     stac_catalog:
       class: Directory
-      location: Any
+      "listing": [
+            {
+                "checksum": "sha1$70e96cddbb205363b4ee9cb763e438a29fd29cdc",
+                "class": "File",
+                "location": "catalog.json",
+                "size": 363
+            },
+            {
+                "class": "Directory",
+                "listing": [
+                    {
+                        "checksum": "sha1$3b8c78f10f437a6fc961bc1e81691556483d9869",
+                        "class": "File",
+                        "location": "S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json",
+                        "size": 2755
+                    },
+                    {
+                        "checksum": "sha1$e5ad8945b7933ea08130eb0a2c568423bd09fdc9",
+                        "class": "File",
+                        "location": "S2B_10TFK_20210713_0_L2A/otsu.tif",
+                        "size": 6918
+                    }
+                ]
+            }
+        ]
