@@ -1,0 +1,5 @@
+rasters: 
+  - class: File
+    location: data/crop_green.tif
+  - class: File
+    location: data/crop_nir.tif

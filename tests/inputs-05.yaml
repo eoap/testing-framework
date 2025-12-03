@@ -1,6 +1,6 @@
 rasters: 
   - class: File
-    location: tests/data/otsu.tif
+    location: data/otsu.tif
 
 item: 
   - https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/item.json

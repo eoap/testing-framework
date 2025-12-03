@@ -1,7 +1,7 @@
 - id: 01_crop
   doc: "a test for the crop green step"
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/inputs-01.yaml
+  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-01.yaml
   output:
     cropped:
       class: File
@@ -10,7 +10,7 @@
 - id: 02_crop
   doc: "a test for the crop nir step"
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/inputs-02.yaml
+  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-02.yaml
   output:
     cropped:
       class: File
@@ -19,7 +19,7 @@
 - id: 03_normalized_difference
   doc: "a test for the normalize step"
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#norm_diff
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/inputs-03.yaml
+  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-03.yaml
   output:
     ndwi:
       class: File
@@ -28,7 +28,7 @@
 - id: 04_otsu_threshold
   doc: "a test for the otsu threshold step"
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#otsu
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/inputs-04.yaml
+  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-04.yaml
   output:
     binary_mask_item:
       class: File
@@ -37,7 +37,7 @@
 - id: 05_stac
   doc: "a test for the stac step"
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#stac
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/inputs-05.yaml
+  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-05.yaml
   output:
     stac_catalog:
       class: Directory
