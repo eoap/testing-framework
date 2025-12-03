@@ -1,0 +1,138 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "S2B_10TFK_20210713_0_L2A",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -120.55525350359474,
+          39.63588071728383
+        ],
+        [
+          -121.8343226741975,
+          39.65576614375439
+        ],
+        [
+          -121.81728871175561,
+          40.64479052153662
+        ],
+        [
+          -120.51956282559038,
+          40.624201162169484
+        ],
+        [
+          -120.55525350359474,
+          39.63588071728383
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -121.8343226741975,
+    39.63588071728383,
+    -120.51956282559038,
+    40.64479052153662
+  ],
+  "properties": {
+    "datetime": "2021-07-13T19:03:24Z",
+    "platform": "sentinel-2b",
+    "constellation": "sentinel-2",
+    "instruments": [
+      "msi"
+    ],
+    "gsd": 10,
+    "view:off_nadir": 0,
+    "sentinel:utm_zone": 10,
+    "sentinel:latitude_band": "T",
+    "sentinel:grid_square": "FK",
+    "sentinel:sequence": "0",
+    "sentinel:product_id": "S2B_MSIL2A_20210713T184919_N0301_R113_T10TFK_20210713T213143",
+    "sentinel:data_coverage": 100,
+    "eo:cloud_cover": 0,
+    "sentinel:valid_cloud_cover": true,
+    "created": "2021-07-13T23:57:53.846Z",
+    "updated": "2021-07-13T23:57:53.846Z",
+    "proj:code": "EPSG:32610"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/S2B_10TFK_20210713_0_L2A.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "green": {
+      "href": "https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/B05.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Band 3 (green)",
+      "gsd": 10,
+      "eo:bands": [
+        {
+          "name": "B03",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.045
+        }
+      ],
+      "proj:shape": [
+        10980,
+        10980
+      ],
+      "proj:transform": [
+        10,
+        0,
+        600000,
+        0,
+        -10,
+        4500000,
+        0,
+        0,
+        1
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "nir": {
+      "href": "https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/B08.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Band 8 (nir)",
+      "gsd": 10,
+      "eo:bands": [
+        {
+          "name": "B08",
+          "common_name": "nir",
+          "center_wavelength": 0.8351,
+          "full_width_half_max": 0.145
+        }
+      ],
+      "proj:shape": [
+        10980,
+        10980
+      ],
+      "proj:transform": [
+        10,
+        0,
+        600000,
+        0,
+        -10,
+        4500000,
+        0,
+        0,
+        1
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "sentinel-s2-l2a-cogs"
+}

@@ -1,0 +1,5 @@
+rasters: 
+  - class: File
+    path: tests/data/crop_green.tif
+  - class: File
+    path: tests/data/crop_nir.tif

@@ -1,0 +1,3 @@
+raster: 
+  class: File
+  path: tests/data/norm_diff.tif

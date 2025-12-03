@@ -1,0 +1,149 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+  ],
+  "id": "S2B_10TFK_20210713_0_L2A",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -121.12830586455517,
+          40.10806153817308
+        ],
+        [
+          -121.01338305962942,
+          40.106146710299
+        ],
+        [
+          -121.0107042087379,
+          40.19798884397378
+        ],
+        [
+          -121.12578175335868,
+          40.199909869105696
+        ],
+        [
+          -121.12830586455517,
+          40.10806153817308
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -121.12830586455517,
+    40.106146710299,
+    -121.0107042087379,
+    40.199909869105696
+  ],
+  "properties": {
+    "proj:epsg": 32610,
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            659520.0,
+            4441430.0
+          ],
+          [
+            669320.0,
+            4441430.0
+          ],
+          [
+            669320.0,
+            4451630.0
+          ],
+          [
+            659520.0,
+            4451630.0
+          ],
+          [
+            659520.0,
+            4441430.0
+          ]
+        ]
+      ]
+    },
+    "proj:bbox": [
+      659520.0,
+      4441430.0,
+      669320.0,
+      4451630.0
+    ],
+    "proj:shape": [
+      1020,
+      980
+    ],
+    "proj:transform": [
+      10.0,
+      0.0,
+      659520.0,
+      0.0,
+      -10.0,
+      4451630.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "datetime": "2021-07-13T19:03:24Z"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "otsu.tif",
+      "type": "image/tiff; application=geotiff",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "scale": 1.0,
+          "offset": 0.0,
+          "sampling": "area",
+          "nodata": 0.0,
+          "statistics": {
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "stddev": 0.0,
+            "valid_percent": 5.50860344137655
+          },
+          "histogram": {
+            "count": 11,
+            "min": 0.5,
+            "max": 1.5,
+            "buckets": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              55064,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    }
+  }
+}
