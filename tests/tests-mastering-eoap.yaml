@@ -1,14 +1,33 @@
-- id: 01_crop
-  doc: "a test for the crop green step"
+# ======================================================================
+# EOAP Application Package Test Suite
+# app-water-bodies-cloud-native (v1.1.0)
+#
+# This suite contains:
+#   - Unit tests for each step (crop, norm_diff, otsu, stac)
+#   - One integration test running the full workflow
+#
+# The intention is to provide a reproducible testing baseline
+# for EOAP-compliant application packages using cwltest.
+# ======================================================================
+
+
+# ----------------------------------------------------------------------
+# 01 — Unit test: Crop (Green band)
+# ----------------------------------------------------------------------
+- id: crop-green
+  doc: "Unit test for the 'crop' step using the Green band input."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
   job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-01.yaml
   output:
     cropped:
       class: File
       location: Any
-    
-- id: 02_crop
-  doc: "a test for the crop nir step"
+
+# ----------------------------------------------------------------------
+# 02 — Unit test: Crop (NIR band)
+# ----------------------------------------------------------------------
+- id: crop-nir
+  doc: "Unit test for the 'crop' step using the NIR band input."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
   job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-02.yaml
   output:
@@ -16,8 +35,12 @@
       class: File
       location: Any
 
-- id: 03_normalized_difference
-  doc: "a test for the normalize step"
+
+# ----------------------------------------------------------------------
+# 03 — Unit test: Normalized Difference (NDWI)
+# ----------------------------------------------------------------------
+- id: normalized-difference
+  doc: "Unit test for the 'norm_diff' step computing NDWI."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#norm_diff
   job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-03.yaml
   output:
@@ -25,8 +48,11 @@
       class: File
       location: Any
 
-- id: 04_otsu_threshold
-  doc: "a test for the otsu threshold step"
+# ----------------------------------------------------------------------
+# 04 — Unit test: Otsu thresholding
+# ----------------------------------------------------------------------
+- id: otsu-threshold
+  doc: "Unit test for the 'otsu' step generating a binary water mask."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#otsu
   job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-04.yaml
   output:
@@ -34,10 +60,49 @@
       class: File
       location: Any
 
-- id: 05_stac
-  doc: "a test for the stac step"
+# ----------------------------------------------------------------------
+# 05 — Unit test: STAC Catalog generation (deterministic)
+# ----------------------------------------------------------------------
+- id: stac-generation
+  doc: "Unit test verifying deterministic STAC Catalog creation."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#stac
   job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-05.yaml
+  output:
+    stac_catalog:
+      class: Directory
+      "listing": [
+            {
+                "checksum": "sha1$70e96cddbb205363b4ee9cb763e438a29fd29cdc",
+                "class": "File",
+                "location": "catalog.json",
+                "size": 363
+            },
+            {
+                "class": "Directory",
+                "listing": [
+                    {
+                        "checksum": "sha1$3b8c78f10f437a6fc961bc1e81691556483d9869",
+                        "class": "File",
+                        "location": "S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json",
+                        "size": 2755
+                    },
+                    {
+                        "checksum": "sha1$e5ad8945b7933ea08130eb0a2c568423bd09fdc9",
+                        "class": "File",
+                        "location": "S2B_10TFK_20210713_0_L2A/otsu.tif",
+                        "size": 6918
+                    }
+                ]
+            }
+        ]
+
+# ----------------------------------------------------------------------
+# 06 — Integration test: Full application workflow
+# ----------------------------------------------------------------------
+- id: workflow-end-to-end
+  doc: "Integration test running the entire water-bodies workflow end-to-end."
+  tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#water-bodies
+  job: inputs-e2e.yaml
   output:
     stac_catalog:
       class: Directory

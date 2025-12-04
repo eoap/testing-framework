@@ -1,0 +1,7 @@
+stac_items:
+  - https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/data/item.json
+aoi: "-121.409,39.824,-120.73,40.482"
+epsg: "EPSG:4326"
+bands: 
+- green
+- nir
