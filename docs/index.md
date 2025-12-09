@@ -167,13 +167,13 @@ Install the required tools:
 Run the suite:
 
 ```
-cwltest --test tests/water-bodies/test-suite.yaml
+cwltest --test tests/test-suite.yaml
 ```
 
 Run only one test:
 
 ```
-cwltest --test tests/water-bodies/test-suite.yaml --id stac-generation
+cwltest --test tests/test-suite.yaml --id stac-generation
 ```
 
 ## Adding Tests to GitHub Actions CI

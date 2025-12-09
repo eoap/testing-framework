@@ -25,4 +25,4 @@ jobs:
           
       - name: Run tests
         run: |
-          cwltest --test tests/tests-mastering-eoap.yaml --tool cwltool --verbose --
+          cwltest --test tests/test-suite.yaml --tool cwltool --verbose --

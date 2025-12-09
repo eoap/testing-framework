@@ -18,13 +18,13 @@ tests/
 
 ```
 pip install cwltool cwltest
-cwltest --test tests/<application>/test-suite.yaml
+cwltest --test tests/test-suite.yaml
 ```
 ## CI Example
 
 ```yaml
 - run: pip install cwltool cwltest
-- run: cwltest --test tests/<application>/test-suite.yaml
+- run: cwltest --test tests/test-suite.yaml
 ```
 
 ## Contributing
