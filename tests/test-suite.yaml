@@ -17,7 +17,7 @@
 - id: crop-green
   doc: "Unit test for the 'crop' step using the Green band input."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-01.yaml
+  job: inputs-01.yaml
   output:
     cropped:
       class: File
@@ -29,7 +29,7 @@
 - id: crop-nir
   doc: "Unit test for the 'crop' step using the NIR band input."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#crop
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-02.yaml
+  job: inputs-02.yaml
   output:
     cropped:
       class: File
@@ -42,7 +42,7 @@
 - id: normalized-difference
   doc: "Unit test for the 'norm_diff' step computing NDWI."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#norm_diff
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-03.yaml
+  job: inputs-03.yaml
   output:
     ndwi:
       class: File
@@ -54,7 +54,7 @@
 - id: otsu-threshold
   doc: "Unit test for the 'otsu' step generating a binary water mask."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#otsu
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-04.yaml
+  job: inputs-04.yaml
   output:
     binary_mask_item:
       class: File
@@ -66,7 +66,7 @@
 - id: stac-generation
   doc: "Unit test verifying deterministic STAC Catalog creation."
   tool: https://github.com/eoap/mastering-app-package/releases/download/1.1.0/app-water-bodies-cloud-native.1.1.0.cwl#stac
-  job: https://github.com/eoap/testing-framework/raw/refs/heads/main/tests/inputs-05.yaml
+  job: inputs-05.yaml
   output:
     stac_catalog:
       class: Directory
