@@ -30,7 +30,6 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.superfences:
       custom_fences:
@@ -42,16 +41,18 @@ markdown_extensions:
       base_path: './'
   - pymdownx.highlight:
       line_spans: __span
-extra_css:
-  - styles/css/app.css
-  
 extra_javascript:
-  - javascripts/config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   
 
 nav:
-  - Testing Framework: 'index.md'
+  - Overview: 'index.md'
+  - Getting started: 'getting-started.md'
+  - Water-bodies example: 'water-bodies.md'
+  - Writing tests: 'writing-tests.md'
+  - Fixtures and reproducibility: 'reproducibility.md'
+  - Continuous integration: 'continuous-integration.md'
+  - Troubleshooting: 'troubleshooting.md'
   
 
 copyright: <a href="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg">License CC BY-SA 4.0</a>, by <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>
