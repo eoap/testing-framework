@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../continuous-integration/" rel="prev"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
+<title>Troubleshooting - Earth Observation Application Package Testing Framework</title>
+<link href="../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#troubleshooting">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Earth Observation Application Package Testing Framework" class="md-header__button md-logo" data-md-component="logo" href=".." title="Earth Observation Application Package Testing Framework">
+<img alt="logo" src="../imgs/icon-eoap.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Earth Observation Application Package Testing Framework
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Earth Observation Application Package Testing Framework" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Earth Observation Application Package Testing Framework">
+<img alt="logo" src="../imgs/icon-eoap.png"/>
+</a>
+    Earth Observation Application Package Testing Framework
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../water-bodies/">
+<span class="md-ellipsis">
+    
+  
+    Water-bodies example
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../writing-tests/">
+<span class="md-ellipsis">
+    
+  
+    Writing tests
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reproducibility/">
+<span class="md-ellipsis">
+    
+  
+    Fixtures and reproducibility
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../continuous-integration/">
+<span class="md-ellipsis">
+    
+  
+    Continuous integration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-cannot-be-found">
+<span class="md-ellipsis">
+      
+        Tools cannot be found
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-startup-fails">
+<span class="md-ellipsis">
+      
+        Container startup fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remote-cwl-or-data-cannot-be-retrieved">
+<span class="md-ellipsis">
+      
+        Remote CWL or data cannot be retrieved
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-local-input-file-is-missing">
+<span class="md-ellipsis">
+      
+        A local input file is missing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#input-validation-fails">
+<span class="md-ellipsis">
+      
+        Input validation fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execution-succeeds-but-comparison-fails">
+<span class="md-ellipsis">
+      
+        Execution succeeds but comparison fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-results-differ-from-ci">
+<span class="md-ellipsis">
+      
+        Local results differ from CI
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-documentation-build-fails">
+<span class="md-ellipsis">
+      
+        The documentation build fails
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-cannot-be-found">
+<span class="md-ellipsis">
+      
+        Tools cannot be found
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-startup-fails">
+<span class="md-ellipsis">
+      
+        Container startup fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remote-cwl-or-data-cannot-be-retrieved">
+<span class="md-ellipsis">
+      
+        Remote CWL or data cannot be retrieved
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-local-input-file-is-missing">
+<span class="md-ellipsis">
+      
+        A local input file is missing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#input-validation-fails">
+<span class="md-ellipsis">
+      
+        Input validation fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execution-succeeds-but-comparison-fails">
+<span class="md-ellipsis">
+      
+        Execution succeeds but comparison fails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-results-differ-from-ci">
+<span class="md-ellipsis">
+      
+        Local results differ from CI
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-documentation-build-fails">
+<span class="md-ellipsis">
+      
+        The documentation build fails
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>Start with the first failing case rather than the final suite summary. Run it independently with detailed output:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1">cwltest<span class="w"> </span>--test<span class="w"> </span>tests/test-suite.yaml<span class="w"> </span>--id<span class="w"> </span>crop-green<span class="w"> </span>--tool<span class="w"> </span>cwltool<span class="w"> </span>--verbose<span class="w"> </span>--
+</span></code></pre></div>
+<p>Replace <code>crop-green</code> with the failing test ID.</p>
+<h2 id="tools-cannot-be-found">Tools cannot be found</h2>
+<p>Activate the virtual environment used for installation, then check:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1">python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>cwltest<span class="w"> </span>cwltool
+</span><span id="__span-1-2">cwltest<span class="w"> </span>--help
+</span><span id="__span-1-3">cwltool<span class="w"> </span>--version
+</span></code></pre></div>
+<p>If installation and execution use different environments, reinstall the tools in the active environment using the <a href="../getting-started/">getting-started commands</a>.</p>
+<h2 id="container-startup-fails">Container startup fails</h2>
+<p>Check <code>docker info</code> in the same environment that launches the tests. Inspect the log for daemon connectivity, permission, image-download, or platform errors. Confirm that the application's container image can be accessed from the runner.</p>
+<p>A successful Python dependency installation does not establish that containers can execute.</p>
+<h2 id="remote-cwl-or-data-cannot-be-retrieved">Remote CWL or data cannot be retrieved</h2>
+<p>Identify the exact failed URL in the log. Check network access, proxy settings, release availability, and whether the referenced path exists.</p>
+<p>The suite fetches the application from a release URL. Crop, catalog, and workflow inputs reference a STAC item on <code>main</code>, whose assets also point to remote rasters. Changing a local fixture does not automatically change those remote references.</p>
+<h2 id="a-local-input-file-is-missing">A local input file is missing</h2>
+<p>Check the job's <code>location</code> values and preserve the relationship between the suite, job YAML, and <code>data/</code> directory. For example, <code>inputs-03.yaml</code> references <code>data/crop_green.tif</code> and <code>data/crop_nir.tif</code> beside the job's directory.</p>
+<p>Confirm the files are present in your checkout before investigating application code.</p>
+<h2 id="input-validation-fails">Input validation fails</h2>
+<p>Compare the job with the selected CWL process. Common causes include a misspelled input name, a scalar supplied where an array is expected, a URL string supplied where a <code>File</code> is expected, or selection of the wrong process fragment.</p>
+<p>The crop cases select <code>#crop</code>; the full workflow selects <code>#water-bodies</code>. Their input names and output ports differ.</p>
+<h2 id="execution-succeeds-but-comparison-fails">Execution succeeds but comparison fails</h2>
+<p>Read which output field differs. A wrong output name or class suggests a changed interface. A size or checksum mismatch suggests changed artifact bytes.</p>
+<p>The catalog-generation and end-to-end cases check the catalog, item, and mask. Follow the <a href="../reproducibility/">baseline review process</a> before replacing expected hashes. Check whether the same mismatch occurs in both cases: shared failures can point to catalog serialization, fixtures, or a common environment dependency.</p>
+<p>If unit cases pass and the full workflow fails, examine the connections between steps and the differences between saved intermediate fixtures and newly generated outputs.</p>
+<h2 id="local-results-differ-from-ci">Local results differ from CI</h2>
+<p>Compare Python, <code>cwltest</code>, <code>cwltool</code>, container runtime, application release, and fixture references. CI currently pins only the test framework among the Python test dependencies.</p>
+<p>Record the environment and the first meaningful error when reporting a failure. Include the test ID, command, relevant log excerpt, and whether the issue reproduces with a single case.</p>
+<h2 id="the-documentation-build-fails">The documentation build fails</h2>
+<p>Install <code>mkdocs-material</code> and <code>mkdocs-mermaid2-plugin</code> in the active environment. Run <code>mkdocs build --strict</code> from the repository root and inspect the first warning or error.</p>
+<p>For a new page, check its navigation path in <code>mkdocs.yml</code>, relative links, and fenced code blocks. A missing Python package is an environment issue; a missing referenced page or asset requires correcting the documentation or site configuration.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<a href="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg">License CC BY-SA 4.0</a>, by <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
